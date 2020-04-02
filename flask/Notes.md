@@ -56,18 +56,114 @@ For user data to persist in web apps, we use databases.
 
 - Note: Flask is finiky with URIs. Best practice is to include `/` at and of path for redirection. More on this [here](https://flask.palletsprojects.com/en/1.1.x/quickstart/#unique-urls-redirection-behavior)
 
+### Additional Route Decorators via Flask Plugins
+
+   - `@login_required` (from Flask-Login): Add before any route to immediately protect it from being accessed from logged-out users. If the user is logged in, @login_required lets them in accordingly. [See more](https://flask-login.readthedocs.io/en/latest/)
+    - `@cache.cached()` (from Flask-Cache): Cache routes for a set period of time, *ie:* `@cache.cached(timeout=50)`.
+
 ## Requests: Behind the scenes
 
 - There is only a single global `request` object to every view function.
 - Can hardcode routes or dynamically generate them
     - Ex: 
-    ```
+    ```python
     @app.route('/a/sample/<variable>/route)
     def some_view(variable):
         # some code to create variable
     ```
 
 - `db.session` is how to connect to the db for when you want to make changes
+
+## Templates
+
+- For, `for loop` logic use `{%...%}` tags in html
+    - Ex: 
+    ``` html
+        {% for contact in contacts %}
+        <li>{{ contact }} </li>
+        {% endfor %}
+    ```
+    ```python
+        return render_template("index.html", contacts=['c1','c2','c3','c4','c5'])
+    ```
+   
+### In Routing
+
+```python
+from flask import Flask, render_template, redirect, url_for
+from markupsafe import escape
+
+app = Flask(__name__)
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return 'This is my custom 404 page'
+
+@app.route('/')
+def index():
+	return render_template('index.html')
+
+@app.route('/1/')
+def template():
+    return render_template("templ8.html", message="Hello Flask!", contacts = ['c1', 'c2', 'c3', 'c4', 'c5'])
+
+@app.route('/<drink>/')
+def drinks(drink):
+    return render_template(drink + '.html')
+
+@app.route('/3/')
+def redir():
+	return redirect('bourbon') # will redirect to /3/bourbon which will results in 404
+```
+
+### Inheritance
+
+- `/templates/base.html`
+    
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask Template Example</title>
+</head>
+
+<body>
+    <h1>Flask Template Example</h1>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+    
+</html>
+```
+
+- `/templates/index.html`
+```
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <p>{{ message }}</p>
+
+    <p>{{ contacts }}</p>
+    <p>My Contacts:</p>
+    <ul>
+        {% for contact in contacts %}
+        <li>{{ contact }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+```
+
+- `app.py`
+```python
+   return render_template("index.html", message="Hello world", contacts=['c1','c2','c3','c4','c5'])
+```
+
+[Source Here](https://www.techiediaries.com/flask-tutorial-templates/)
+[From the docs](https://flask.palletsprojects.com/en/1.1.x/tutorial/templates/)
 
 ---
 
@@ -89,3 +185,9 @@ Use the following command if Flask says port already in use: `lsof -i -P -n | gr
 ## Secuirty
 
 [MarkupSafe](https://markupsafe.palletsprojects.com/en/1.1.x)
+
+
+## Extra Sources
+
+- <https://hackersandslackers.com/flask-routes/>
+- <https://flask.palletsprojects.com>
