@@ -1,9 +1,9 @@
 # Nodejs
 
-- [Here](Notes.md) are my notes.
+- [Here](nodejsNotes.md) are my notes.
+- [Express](expressNotes.md)
 
 ## Next Up
 - Express Learning
 	- <https://code.visualstudio.com/docs/nodejs/nodejs-tutorial>
 	- <https://www.youtube.com/watch?v=G8uL0lFFoN0>
-	- <https://www.guru99.com/node-js-express.html>
