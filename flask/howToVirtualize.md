@@ -9,10 +9,10 @@
 ## pipenv
 
 1. pipenv install --user pipenv
-2. pipenv isntall --python 3.6
+2. pipenv install --python 3.6
 3. pipenv shell
 4. deactivate
 
-## Help
+## Troubleshooting
 
-Use the following command if Flask says port already in use: `lsof -i -P -n | grep LISTEN`
+Use the following command if Flask says port already in use: `lsof -i -P -n | grep LISTEN` then `kill <pid>`
