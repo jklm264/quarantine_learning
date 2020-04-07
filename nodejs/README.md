@@ -1,8 +1,5 @@
 # Nodejs
 
 - [Here](nodejsNotes.md) are my notes.
-- [Express](examples/express_app/expressNotes.md)
-
-## Next Up
-
-- Express Learning
+- [Express Notes](examples/express_app/expressNotes.md)
+- [Fully-working App](examples/express_app/takeASwig)
