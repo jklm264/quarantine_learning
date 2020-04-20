@@ -8,6 +8,10 @@
 4. `$flask run` # If changing python (not html), will need to rerun this cmd
 5. `$deactivate`
 
+## Creating APIs
+
+- https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask
+
 ### Troubleshooting
 
 - Use the following command if Flask says port already in use: `lsof -i -P -n | grep LISTEN then kill <pid>`
