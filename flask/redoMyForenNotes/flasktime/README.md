@@ -10,6 +10,7 @@
 
 ## Creating APIs
 
+- [Better API POST source](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
 - https://programminghistorian.org/en/lessons/creating-apis-with-python-and-flask
 
 ### Troubleshooting
