@@ -5,8 +5,9 @@
 1. `$virtualenv -p /usr/bin/python3 ./path_of_virtenv`
 2. `$source ./path_of_virtenv/bin/activate`
 3. `$export FLASK_APP=run.py`
-4. `$flask run` # If changing python (not html), will need to rerun this cmd
-5. `$deactivate`
+4. `$export FLASK_ENV=development`
+5. `$flask run` # If changing python (not html), will need to rerun this cmd
+6. `$deactivate`
 
 ## Creating APIs
 

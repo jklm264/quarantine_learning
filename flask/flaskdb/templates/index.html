@@ -1,0 +1,45 @@
+<!--show_all() is actually done in the html thanks to templating-->
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{%block head %}
+    {{ super() }}
+    <meta http-equiv="refresh" content="10">
+{% endblock %}
+
+{% block content %}
+    <h1>Welcome</h1>
+    <br>
+        <p>Hi, this is my home. This site is only here to let you know this web app is actually for api's only!</p>
+
+        <p>This api is a "man page"-styled app that will allow users to search content as well as add to this athenaeum of forensic knowledge.</p>
+
+        <p>This page will auto-populate with the most up-to-date Forensics information in our database!</p>
+
+{%- for message in get_flashed_messages() %}
+         {{ message }} 
+{%- endfor %}
+
+<table>
+         <thead>
+            <tr>
+               <th>Topic</th>
+               <th>Man</th>
+               <!-- <th>Hits</th> -->
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for page in manPage %}
+               <tr>
+                  <td>{{ page.topic }}</td>
+                  <td>{{ page.content }}</td>
+                  <!-- <td>{{ page.hits }}</td> -->
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+{% endblock %}
+<!--Note that since the child template doesn’t define the footer block, the value from the parent template is used instead.-->
+
