@@ -5,7 +5,7 @@
 - This app was meant to explore flask's API with Flask_SQLAlchemy.
 - THere are two routes:
     - Main ('/') which will list [aka `query.all()`] the information that is in the db.
-    - '/new' will allow a user to POST a new man to the db and then will redirect you to the '/' page.
+    - '/new' will allow a user to POST a new man to the db and then will redirect you to the '/' page. (*topic* and *content*)
 
 ## Creating Env
 

@@ -169,10 +169,9 @@ def redir():
 
 ## Installation
 
-1. `pip install Flask`
-2. Then [virtualize](howto_virtualize.md)
-3. [Docs](https://flask.palletsprojects.com/en/1.1.x/quickstart/#quickstart)
-4. `export FLASK_APP=quickstart.py`
+1. [Virtualize](howToVirtualize.md)
+2. `pip install Flask`
+3. `export FLASK_APP=quickstart.py`
 
 - Make the server publically available: `$ flask run --host=0.0.0.0`
 - To add [debugging](https://flask.palletsprojects.com/en/1.1.x/quickstart/#debug-mode): `export FLASK_ENV=development`

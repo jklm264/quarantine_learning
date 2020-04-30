@@ -15,13 +15,16 @@
 
         <p>This api is a "man page"-styled app that will allow users to search content as well as add to this athenaeum of forensic knowledge.</p>
 
+        <p><b>To use the api,</b> simply include the following headers to fill and watch the site append it to our database right before your eyes: </p>
+         <p><code>-H "Content-Type: application/json" -X POST -d '{"topic":"The Sleuth Kit (TSK)", "content":"Freakin eric zimmerman"}' </code></p>
+
         <p>This page will auto-populate with the most up-to-date Forensics information in our database!</p>
 
 {%- for message in get_flashed_messages() %}
          {{ message }} 
 {%- endfor %}
 
-<table>
+<table style="border:1px solid black;" rules=rows>
          <thead>
             <tr>
                <th>Topic</th>
