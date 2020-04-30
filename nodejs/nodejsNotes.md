@@ -1,5 +1,7 @@
 # Nodejs
 
+**IMPORTANT** `$echo node_modules/ > .gitignore`
+
 ## Contents
 
 - [What/Why Node](#What-is/Why-node)
