@@ -5,3 +5,5 @@ In the [quickstart directory](quickstart) can be found the quickstart site. This
 Another flask app was done via Docker; see [docker container proj here](docker_jmussman).
 
 Also, [my notes](Notes.md).
+
+Then, there is a [setup.py](setup.py) for the [directory mypackage](mypackage).
