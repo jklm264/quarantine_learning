@@ -1,0 +1,18 @@
+import setuptools
+
+setuptools.setup(
+	name='mypackage',
+	version='0.0.1',
+	description='My first',
+	packages=setuptools.find_packages(),
+	url="https://github.com/jklm264",
+	author="jklm264",
+	author_email="no@no.com",
+	python_requires='>=3.5',
+	license='LICENSE.text',
+	long_description="see readme",
+	long_description_content_type="text/markdown",
+)
+
+#can just use pip install cookiecutter
+# see more: https://www.youtube.com/watch?v=P3dY3uDmnkU
