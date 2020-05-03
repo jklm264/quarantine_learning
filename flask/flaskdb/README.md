@@ -1,5 +1,9 @@
 # FlaskDB
 
+When ready to put into production/not-locally, see [twilio's write-up](https://www.twilio.com/blog/how-run-flask-application) and [the flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment).
+
+
+
 ## What does this do?
 
 - This app was meant to explore flask's API with Flask_SQLAlchemy.
@@ -15,6 +19,8 @@
 4. `$export FLASK_ENV=development`
 5. `$flask run` # If changing python (not html), will need to rerun this cmd
 6. `$deactivate`
+
+Instead of using `$flask run` (and the export statements), can edit the app.run() function in app.py by adding `load_dotenv='*.env'`. To note, running your program this was provides a "less robust" reloader according to the Twilio article.
 
 ## Creating APIs
 
