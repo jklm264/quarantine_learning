@@ -9,7 +9,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = "an_example_pypi_project",
+    name = "packagemeup",
     version = "0.0.4",
     author = "My name",
     author_email = "myemail@no.com",
@@ -17,7 +17,7 @@ setup(
     license = "BSD",
     keywords = "example documentation tutorial",
     url = "https://github.com/jklm264",
-    packages=['an_example_pypi_project', 'tests'],
+    packages=['packagemeup', 'tests'],
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
     classifiers=[
