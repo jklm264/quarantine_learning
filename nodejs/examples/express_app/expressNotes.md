@@ -51,7 +51,7 @@ app.route('/Angular').get(function(req,res)
     res.send("Tutorial on Angular");
 });
 app.get('/',function(req,res){
-    res.send('Welcome to Guru99 Tutorials');
+    res.send('Welcome to my Tutorials');
 }));
 ```
 

@@ -142,7 +142,7 @@ A module is run via an Immediately Invoked Function Expression ([IIFE](https://e
 
           // Listener, when an event is raised
           emitter.emit('messageLogged', {id: 1, url: 'http://'}); // "Making a noise - signaling"
-            ```
+          ```
     - Arrow-Function allows:
         - ```javascript
           emitter.on('logging', (e) => {
@@ -216,3 +216,5 @@ class Logger extends EventEmitter {
 
 module.exports = Logger;
 ```
+
+To run: `$node app.js`
