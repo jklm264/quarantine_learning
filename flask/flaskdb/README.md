@@ -1,8 +1,6 @@
 # FlaskDB
 
-When ready to put into production/not-locally, see [twilio's write-up](https://www.twilio.com/blog/how-run-flask-application) and [the flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment).
-
-
+![homepage](sitepic.png)
 
 ## What does this do?
 
@@ -56,6 +54,7 @@ Instead of using `$flask run` (and the export statements), can edit the app.run(
 - Check if topic is already there. Should be interactive at this point to allow user to then agree to overwrite the change, else dont bother updating OR query create a new entry with a modified topic name.
 - Add security and permission for different users
     - Use secret key somehow
+- When ready to put into production/not-locally, see [twilio's write-up](https://www.twilio.com/blog/how-run-flask-application) and [the flask docs](https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment).
 
 ## Helpful Sources
 
