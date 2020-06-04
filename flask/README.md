@@ -1,9 +1,14 @@
 # Flask Learning
 
-In the [quickstart directory](quickstart) can be found the quickstart site. This was made using pipenv; check out the [virtualizing instructions](howToVirtualize.md) to learn how to run the website.
+[**Basic** Docker Notes](Notes.md)
 
-Here, a [Flask app was done via Docker](docker_jmussman).
+[virtualizing instructions](howToVirtualize.md)
 
-Also, [**Basic** Docker Notes](Notes.md).
 
-Then, there is a [setup.py](setup.py) for [learning how to properly package an app](mypackage).
+
+## Projects
+
+- [quickstart director](quickstart)
+- [Flask app was done via Docker](docker_jmussman)
+- [setup.py](setup.py) for [learning how to properly package an app](mypackage)
+- [Flask with database](flaskdb)
