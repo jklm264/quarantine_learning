@@ -45,6 +45,8 @@ Last, create the monolothic exe via `$ ./hello.exe`
 
 To simply run a file `$ go run <file.go> <args>`
 
+**IF** you have more than one file, make sure to have `package main` at the top of each file **AND** while running (`go run`) the program make sure to include every *.go* file needed.
+
 To create an exe use build (`$ go build`) first then run as executable.
 
 ## Error Handling
