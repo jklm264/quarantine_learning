@@ -54,6 +54,7 @@ Use `errors` and `log` modules.
 ## Misc
 
 - A map is akin to a dict in Python
+- To build an exe without symbol table and debugging info: `$ go build -ldflags "-w -s"`
 
 ## Writing Tests
 
