@@ -13,7 +13,7 @@ func main() {
 		established: "established since 1969",
 		writteningo: "written in Go so, thanks Google",
 	}
-	fmt.Printf("\t\tWelcome to %v!\n\t\t\t%v\nWe were %v. This was %v!\n\n", info.name, info.motto, info.established, info.writteningo)
+	fmt.Printf("\t\tWelcome to %v\n\t\t\t%v\nWe were %v. This was %v!\n\n", info.name, info.motto, info.established, info.writteningo)
 	begin()
 }
 

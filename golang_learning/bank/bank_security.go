@@ -10,7 +10,7 @@ const (
 // Can also make like this:: var account_db = make(map[string]User, 10)
 // var account_db = map[string]User){}
 // db[uname] = fname,lname,uname,pword,cs,Account,status
-var account_db = make(map[string]User, 10)
+var account_db = make(map[string]*User, 10)
 
 // Basic info about who you are banking with
 type Bank_info struct {
@@ -51,21 +51,29 @@ func login2(uname string) {
 			get_account_balance(uname)
 			clearscreen(1)
 		case 2:
-			fmt.Println("I will now deposit money.")
 			var funds float32
+			fmt.Println("I will now deposit money.")
 			fmt.Printf("How much money would you like to deposit? ")
 			fmt.Scanln(&funds)
-			// TODO: Add error check
+			// TODO: Add error checks
 			deposit_funds(uname, funds)
 			get_account_balance(uname)
 			clearscreen(1)
 		case 3:
+			var funds float32
 			fmt.Println("I will now withdraw money.")
+			fmt.Printf("How much money would you like to withdraw? ")
+			fmt.Scanln(&funds)
+			withdraw_funds(uname, funds)
+			get_account_balance(uname)
+			clearscreen(1)
 		case 4:
 			fmt.Println("I will now show you all your account data.")
+			show_account(uname)
 		case 5:
 			fmt.Println("I will now close your account.")
-			//Simply change status to false
+			close_account(uname)
+			clearscreen(1)
 		case 6:
 			Uexit()
 		default:
@@ -76,7 +84,18 @@ func login2(uname string) {
 }
 
 func deposit_funds(uname string, funds float32) {
-	fmt.Printf("TESTING: %v\n", funds)
-	fmt.Println(account_db[uname].acct.balance)
-	account_db[uname].acct.balance = funds
+	account_db[uname].acct.balance += funds
+}
+
+func withdraw_funds(uname string, funds float32) {
+	account_db[uname].acct.balance -= funds
+}
+
+func close_account(uname string) {
+	account_db[uname].status = false
+}
+
+func show_account(uname string) {
+	db := account_db[uname]
+	fmt.Printf("\n\tFull Name: %s %s\n\tCredit Score: %d\n\tAccount Status: %v\n\tUsername: %s\n\tAccount Number: %v\n\tAccount Balance: %v\n", db.first_name, db.last_name, db.creditscore, db.status, db.acct.username, db.acct.accountnumber, db.acct.balance)
 }

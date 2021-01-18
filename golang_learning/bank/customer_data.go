@@ -63,7 +63,8 @@ func create_user() {
 	}
 
 	// Add to db
-	account_db[uname] = fill_user(fname, lname, uname, pword, cs)
+	user := fill_user(fname, lname, uname, pword, cs)
+	account_db[uname] = &user
 }
 
 func fill_user(fname string, lname string, uname string, pword string, cs int) User {
