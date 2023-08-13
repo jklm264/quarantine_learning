@@ -11,11 +11,11 @@ Compile a project: `cargo build`
 * Alt cmd: `rustc file.rs` 
 
 ```none
-+--  projectDir
-   +-- Cargo.lock #keeps track of deps
-   +-- Cargo.toml
-   +-- src/
-   +-- target/* #contains exe
+└──  projectDir
+   ├── Cargo.lock #keeps track of deps
+   ├── Cargo.toml
+   ├── src/
+   └── target/* #contains exe
 ```
 
 Will compile without compiling: `cargo check`
@@ -42,4 +42,6 @@ Builtin linter: `cd src; rustfmt main.rs`
 | primitive_types3.rs | `let a = [3;300];` | Creates [an array](https://doc.rust-lang.org/stable/book/ch03-02-data-types.html#the-array-type) starting at 3 with size of 300 |
 | primitive_types5.rs | ` let cat = ("Furry McFurson", 3.5); let (name,age) = cat;` | Deconstruct a tuple |
 | primitive_types6.rs | `let numbers = (1, 2, 3); let second = numbers.1;` | Accessing a tuple |
-
+| move_semantics6.rs | `mut` vs `&` | `mut` when mutating data, ie.e add an element to end of vec. Borrow `&` when you just need read access. | 
+| structs2.rs | `let order_template = create_order_template(); let your_order = Order{name: String::from("Hacker in Rust"),count: 1,..order_template};`| `..order_template` to fill in rest that isn't specified. |
+| enums2.rs | `enum Message {Move{x:i8,y:i8},ChangeColor(i16,i16,i16),}` | how to enum | 
